@@ -8,10 +8,9 @@ Regras do Jogo
 """
 
 def robot(pos):
-    if pos == 10:
+    if pos in (20, 10, 5):
         return 'buzz'
-    if pos == 5:
-        return 'buzz'
+
     if pos in (9, 6, 3):
        return 'fizz'
 
@@ -29,3 +28,4 @@ if __name__ == '__main__':
 
     assert robot(5) == 'buzz'
     assert robot(10) == 'buzz'
+    assert robot(20) == 'buzz'
