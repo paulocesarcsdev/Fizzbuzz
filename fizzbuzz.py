@@ -8,10 +8,10 @@ Regras do Jogo
 """
 
 def robot(pos):
-    if pos in (20, 10, 5):
+    if pos % 5 == 0:
         return 'buzz'
 
-    if pos in (9, 6, 3):
+    if pos % 3 == 0:
        return 'fizz'
 
     return str(pos)
