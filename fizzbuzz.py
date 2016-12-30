@@ -8,10 +8,14 @@ Regras do Jogo
 """
 
 def robot(pos):
-    if pos == 2:
-        return '2'
-    return '1'
+    if pos == 3:
+        return 'fizz'
+    return str(pos)
+
 
 if __name__ == '__main__':
     assert robot(1) == '1'
     assert robot(2) == '2'
+    assert robot(4) == '4'
+
+    assert robot(3) == 'fizz'
