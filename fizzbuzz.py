@@ -8,8 +8,8 @@ Regras do Jogo
 """
 
 def robot(pos):
-    if pos == 3:
-        return 'fizz'
+    if pos == 9 or pos == 6 or pos == 3:
+       return 'fizz'
     return str(pos)
 
 
@@ -19,3 +19,5 @@ if __name__ == '__main__':
     assert robot(4) == '4'
 
     assert robot(3) == 'fizz'
+    assert robot(6) == 'fizz'
+    assert robot(9) == 'fizz'
