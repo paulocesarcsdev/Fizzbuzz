@@ -8,16 +8,17 @@ Regras do Jogo
 """
 
 def robot(pos):
+    say = str(pos)
     if pos % 3 == 0 and pos % 5 == 0:
-        return 'fizzbuzz'
+        say = 'fizzbuzz'
 
-    if pos % 5 == 0:
-        return 'buzz'
+    elif pos % 5 == 0:
+        say = 'buzz'
 
-    if pos % 3 == 0:
-       return 'fizz'
+    elif pos % 3 == 0:
+       say = 'fizz'
 
-    return str(pos)
+    return say
 
 
 if __name__ == '__main__':
