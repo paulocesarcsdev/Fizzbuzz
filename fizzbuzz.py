@@ -8,8 +8,7 @@ Regras do Jogo
 """
 
 
-def multiple_of(base, num):
-    return num % base == 0
+multiple_of = lambda base, num: num % base == 0
 
 def multiple_of_5(num):
     return multiple_of(5, num)
@@ -22,13 +21,10 @@ def robot(pos):
 
     if multiple_of_3(pos) and multiple_of_5(pos):
         say = 'fizzbuzz'
-
     elif multiple_of_5(pos):
         say = 'buzz'
-
     elif multiple_of_3(pos):
        say = 'fizz'
-
     return say
 
 
