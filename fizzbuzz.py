@@ -6,18 +6,15 @@ Regras do Jogo
 3.Quando a posição for múltipla de 3 e de 5 ,fale fizzbuzz;
 4.Para todas as outras posições, fale o própio número.
 """
-
+from functools import partial
 
 multiple_of = lambda base, num: num % base == 0
-
-def multiple_of_5(num):
-    return multiple_of(5, num)
-
-def multiple_of_3(num):
-    return multiple_of(3, num)
+multiple_of_5 = partial(multiple_of, 5)
+multiple_of_3 = partial(multiple_of, 3)
 
 def robot(pos):
     say = str(pos)
+
 
     if multiple_of_3(pos) and multiple_of_5(pos):
         say = 'fizzbuzz'
