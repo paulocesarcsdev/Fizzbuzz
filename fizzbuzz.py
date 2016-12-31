@@ -7,6 +7,9 @@ Regras do Jogo
 4.Para todas as outras posições, fale o própio número.
 """
 
+def multiple_of_3(num):
+    return num % 3 == 0
+
 def robot(pos):
     say = str(pos)
     if pos % 3 == 0 and pos % 5 == 0:
@@ -15,7 +18,7 @@ def robot(pos):
     elif pos % 5 == 0:
         say = 'buzz'
 
-    elif pos % 3 == 0:
+    elif multiple_of_3(pos):
        say = 'fizz'
 
     return say
