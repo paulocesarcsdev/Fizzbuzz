@@ -7,6 +7,7 @@ Regras do Jogo
 4.Para todas as outras posições, fale o própio número.
 """
 from functools import partial
+import unittest
 
 multiple_of = lambda base, num: num % base == 0
 multiple_of_5 = partial(multiple_of, 5)
@@ -24,8 +25,44 @@ def robot(pos):
        say = 'fizz'
     return say
 
+class FizzbuzzTest(unittest.TestCase):
+    def test_say_1_when_1(self):
+        self.assertEqual(robot(1), '1')
 
-def assert_equal(result, expected, line):
+    def test_say_2_when_2(self):
+        self.assertEqual(robot(2), '2')
+
+    def test_say_4_when_4(self):
+        self.assertEqual(robot(4), '4')
+
+    def test_say_fizz_when_3(self):
+        self.assertEqual(robot(3), 'fizz')
+
+    def test_say_fizz_when_6(self):
+        self.assertEqual(robot(6), 'fizz')
+
+    def test_say_9_fizz_9(self):
+        self.assertEqual(robot(9), 'fizz')
+
+    def test_say_buzz_when_5(self):
+        self.assertEqual(robot(5), 'buzz')
+
+    def test_say_buzz_when_10(self):
+        self.assertEqual(robot(10), 'buzz')
+
+    def test_say_buzz_when_20(self):
+        self.assertEqual(robot(20), 'buzz')
+
+    def test_say_buzz_when_15(self):
+        self.assertEqual(robot(15), 'fizzbuzz')
+
+    def test_say_buzz_when_30(self):
+        self.assertEqual(robot(30), 'fizzbuzz')
+
+    def test_say_buzz_when_45(self):
+        self.assertEqual(robot(45), 'fizzbizz')
+"""
+def assert_equal(result, expected):
     from sys import _getframe
 
     msg = 'Fail: Line {} got {} expecting {}'
@@ -37,14 +74,15 @@ def assert_equal(result, expected, line):
         print(msg.format(line_no, result, expected))
 
 if __name__ == '__main__':
-    assert_equal(robot(1),  '1', '35')
-    assert_equal(robot(2),  '2', '36')
-    assert_equal(robot(4),  '4', '37')
-    assert_equal(robot(3),  'fizz', '38')
-    assert_equal(robot(6),  'fizz', '39')
-    assert_equal(robot(9),  'fizz', '40')
-    assert_equal(robot(5),  'buzz', '41')
-    assert_equal(robot(10),  'buzz', '42')
-    assert_equal(robot(20),  'buzz', '43')
-    assert_equal(robot(15),  'fizzbuzz', '44')
-    assert_equal(robot(30),  'fizzbuzz', '45')
+    assert_equal(robot(1),  '1')
+    assert_equal(robot(2),  '2')
+    assert_equal(robot(4),  '4')
+    assert_equal(robot(3),  'fizz')
+    assert_equal(robot(6),  'fizz')
+    assert_equal(robot(9),  'fizz')
+    assert_equal(robot(5),  'buzz')
+    assert_equal(robot(10),  'buzz')
+    assert_equal(robot(20),  'buzz')
+    assert_equal(robot(15),  'fizzbuzz')
+    assert_equal(robot(30),  'fizzbuzz')
+"""
