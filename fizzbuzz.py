@@ -26,10 +26,15 @@ def robot(pos):
 
 
 def assert_equal(result, expected, line):
+    from sys import _getframe
+
     msg = 'Fail: Line {} got {} expecting {}'
 
     if not result == expected:
-        print(msg.format(line, result, expected))
+        current = _getframe()
+        caller = current.f_back
+        line_no = caller.f_lineno
+        print(msg.format(line_no, result, expected))
 
 if __name__ == '__main__':
     assert_equal(robot(1),  '1', '35')
