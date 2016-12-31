@@ -60,7 +60,11 @@ class FizzbuzzTest(unittest.TestCase):
         self.assertEqual(robot(30), 'fizzbuzz')
 
     def test_say_buzz_when_45(self):
-        self.assertEqual(robot(45), 'fizzbizz')
+        self.assertEqual(robot(45), 'fizzbuzz')
+
+
+if __name__ == '__main__':
+    unittest.main()
 """
 def assert_equal(result, expected):
     from sys import _getframe
