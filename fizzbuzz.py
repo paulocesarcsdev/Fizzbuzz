@@ -7,17 +7,20 @@ Regras do Jogo
 4.Para todas as outras posições, fale o própio número.
 """
 
+
+def multiple_of(base, num):
+    return num % base == 0
+
 def multiple_of_5(num):
-    return num % 5 == 0
+    return multiple_of(5, num)
 
 def multiple_of_3(num):
-    return num % 3 == 0
+    return multiple_of(3, num)
 
 def robot(pos):
     say = str(pos)
 
     if multiple_of_3(pos) and multiple_of_5(pos):
-    #if pos % 3 == 0 and pos % 5 == 0:
         say = 'fizzbuzz'
 
     elif multiple_of_5(pos):
