@@ -15,7 +15,9 @@ def multiple_of_3(num):
 
 def robot(pos):
     say = str(pos)
-    if pos % 3 == 0 and pos % 5 == 0:
+
+    if multiple_of_3(pos) and multiple_of_5(pos):
+    #if pos % 3 == 0 and pos % 5 == 0:
         say = 'fizzbuzz'
 
     elif multiple_of_5(pos):
