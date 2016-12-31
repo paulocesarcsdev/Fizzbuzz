@@ -24,26 +24,22 @@ def robot(pos):
        say = 'fizz'
     return say
 
-def assert_true(expr):
-    try:
-        assert expr
-    except AssertionError:
-        print(expr)
 
+def assert_equal(result, expected, line):
+    msg = 'Fail: Line {} got {} expecting {}'
+
+    if not result == expected:
+        print(msg.format(line, result, expected))
 
 if __name__ == '__main__':
-    assert robot(1) == '1'
-    assert robot(2) == '2'
-    assert robot(4) == '4'
-
-    assert_true(robot(3) == 'fizz')
-    assert robot(6) == 'fizz'
-    assert robot(9) == 'fizz'
-
-    assert robot(5) == 'buzz'
-    assert robot(10) == 'buzz'
-    assert robot(20) == 'buzz'
-
-    assert robot(15) == 'fizzbuzz'
-    assert robot(30) == 'fizzbuzz'
-    assert robot(45) == 'fizzbuzz'
+    assert_equal(robot(1),  '1', '35')
+    assert_equal(robot(2),  '2', '36')
+    assert_equal(robot(4),  '4', '37')
+    assert_equal(robot(3),  'fizz', '38')
+    assert_equal(robot(6),  'fizz', '39')
+    assert_equal(robot(9),  'fizz', '40')
+    assert_equal(robot(5),  'buzz', '41')
+    assert_equal(robot(10),  'buzz', '42')
+    assert_equal(robot(20),  'buzz', '43')
+    assert_equal(robot(15),  'fizzbuzz', '44')
+    assert_equal(robot(30),  'fizzbuzz', '45')
